@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SkinCare Routine App</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="logo">
+                    <span class="logo-icon">✨</span>
+                    <h1>SkinCare Routine</h1>
+                    <p>Temukan rutinitas skincare sempurna untuk kulit Anda</p>
+                </div>
+
+                <form id="loginForm" class="form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Masukkan email Anda">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Masukkan password Anda">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+
+                    <div class="divider">atau</div>
+
+                    <a href="/register" class="btn btn-secondary btn-full">Belum punya akun? Daftar sekarang</a>
+                </form>
+
+                <div id="message" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/api.js"></script>
+    <script src="/assets/auth.js"></script>
+    <script>
+        // Redirect jika sudah login
+        if (localStorage.getItem('token')) {
+            window.location.href = '/dashboard';
+        }
+    </script>
+</body>
+</html>

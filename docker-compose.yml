@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: skincare_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: skincare_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - skincare-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: skincare_backend
+    environment:
+      PORT: 8080
+      GIN_MODE: debug
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: skincare_db
+      JWT_SECRET: your-secret-key-here
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - skincare-network
+
+volumes:
+  mysql_data:
+
+networks:
+  skincare-network:
+    driver: bridge

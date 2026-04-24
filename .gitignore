@@ -1,0 +1,153 @@
+# Backend
+backend/.env
+backend/.env.local
+backend/.DS_Store
+backend/*.exe
+backend/*.so
+backend/*.dylib
+
+# Go
+*.go
+!*.go
+go.sum
+/vendor/
+*.mod
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+
+# Binaries
+bin/
+dist/
+skincare-app
+skincare-app.exe
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Temp files
+*.tmp
+*.bak
+*.swp
+.env.local
+.env.production.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (jika ada)
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode
+
+# Misc
+.cache
+.parcel-cache
+.next
+out/
+.nuxt
+dist/
+.cache/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.env.test
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Mac files
+.AppleDouble
+.LSOverride
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Development
+.DS_Store
+.env
+.env.local
+
+# Secrets - NEVER COMMIT
+*.pem
+*.key
+*.crt
+secrets/
+
+# Build artifacts
+/target/
+/build/
+/dist/
+*.o
+*.a
+*.so
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Production build
+/out/
+/build/
+/.next/
+/dist/
+
+# Keep .env.example
+!.env.example

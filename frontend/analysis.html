@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Analisis - SkinCare Routine App</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="logo-small">
+                <span class="logo-icon">✨</span>
+                <span>SkinCare Routine</span>
+            </div>
+            <div class="nav-menu">
+                <a href="/dashboard" class="btn btn-sm btn-secondary">← Kembali ke Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page">
+            <div class="page-header">
+                <h2>Analisis Kulit</h2>
+                <p>Masukkan kondisi kulit Anda untuk mendapatkan rekomendasi skincare yang dipersonalisasi</p>
+            </div>
+
+            <div class="card">
+                <form id="analysisForm" class="form">
+                    <div class="form-group">
+                        <label for="skinType">Jenis Kulit *</label>
+                        <select id="skinType" name="skinType" required>
+                            <option value="">-- Pilih Jenis Kulit --</option>
+                            <option value="kering">Kulit Kering</option>
+                            <option value="berminyak">Kulit Berminyak</option>
+                            <option value="kombinasi">Kulit Kombinasi</option>
+                            <option value="sensitif">Kulit Sensitif</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Masalah Kulit *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="skinIssues" value="jerawat">
+                                <span>Jerawat</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="skinIssues" value="kusam">
+                                <span>Kusam</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="skinIssues" value="flek hitam">
+                                <span>Flek Hitam</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="skinIssues" value="kerutan">
+                                <span>Kerutan</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="skinIssues" value="kering">
+                                <span>Kering Ekstrem</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="skinIssues" value="sensitif">
+                                <span>Sensitif</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sensitivity">Tingkat Sensitivitas *</label>
+                        <select id="sensitivity" name="sensitivity" required>
+                            <option value="">-- Pilih Tingkat --</option>
+                            <option value="rendah">Rendah</option>
+                            <option value="sedang">Sedang</option>
+                            <option value="tinggi">Tinggi</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Analisis Kulit Saya</button>
+                </form>
+
+                <div id="analysisMessage" class="message"></div>
+            </div>
+
+            <div id="resultContainer" style="display: none;">
+                <div class="card">
+                    <h3>Rutinitas Pagi (Morning Routine)</h3>
+                    <div id="morningRoutine"></div>
+                </div>
+
+                <div class="card">
+                    <h3>Rutinitas Malam (Night Routine)</h3>
+                    <div id="nightRoutine"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/dashboard.js"></script>
+</body>
+</html>

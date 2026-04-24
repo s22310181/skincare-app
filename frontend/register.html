@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SkinCare Routine App</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="logo">
+                    <span class="logo-icon">✨</span>
+                    <h1>SkinCare Routine</h1>
+                    <p>Buat akun untuk memulai</p>
+                </div>
+
+                <form id="registerForm" class="form">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" required placeholder="Masukkan nama lengkap Anda">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="Masukkan email Anda">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required placeholder="Minimal 6 karakter">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Konfirmasi Password</label>
+                        <input type="password" id="confirmPassword" required placeholder="Ulangi password Anda">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Daftar</button>
+
+                    <div class="divider">atau</div>
+
+                    <a href="/login" class="btn btn-secondary btn-full">Sudah punya akun? Login</a>
+                </form>
+
+                <div id="message" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/api.js"></script>
+    <script src="/assets/auth.js"></script>
+    <script>
+        // Redirect jika sudah login
+        if (localStorage.getItem('token')) {
+            window.location.href = '/dashboard';
+        }
+    </script>
+</body>
+</html>
